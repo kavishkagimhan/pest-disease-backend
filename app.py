@@ -35,6 +35,9 @@ def get_status_label(status_num):
         return "low"
     else:
         return "unknown"
+@app.get("/")
+def read_root():
+    return {"message": "Hello, FastAPI!"}
 
 # Create a prediction endpoint for pest and disease model
 @app.post("/pest-disease", response_model=OutputData)
